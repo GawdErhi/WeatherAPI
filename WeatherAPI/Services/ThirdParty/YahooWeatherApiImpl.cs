@@ -51,16 +51,16 @@ namespace WeatherAPI.Services.ThirdParty
                         {
                             GetCurrentWeatherData(x);
                         });
-                        await Task.Delay(TimeSpan.FromSeconds(callIntervalInSeconds), _cancellationToken);
                         if (weatherProcess.IsCompleted)
                         {
                             _weatherObservationService.SaveRecordsAndCommit(_weatherObservationModels.ToList());
                             _weatherObservationModels = new ConcurrentBag<WeatherObservation>();
                         }
+                        await Task.Delay(TimeSpan.FromSeconds(callIntervalInSeconds), _cancellationToken);
                     }
                 }, _cancellationToken);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 throw;
             }

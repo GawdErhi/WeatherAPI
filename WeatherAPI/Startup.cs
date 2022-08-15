@@ -29,13 +29,13 @@ namespace WeatherAPI
         {
             services.AddDbContext<DB.WeatherApiDBContext>(x => x.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddTransient<ISeedHandler, SeedHandler>();
-            services.AddTransient<ICountryService, CountryService>();
-            services.AddTransient<ICityService, CityService>();
-            services.AddTransient<IAstronomyService, AstronomyService>();
-            services.AddTransient<IAtmosphereService, AtmosphereService>();
-            services.AddTransient<IConditionService, ConditionService>();
-            services.AddTransient<IWindService, WindService>();
-            services.AddTransient<IWeatherObservationService, WeatherObservationService>();
+            services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<ICityService, CityService>();
+            services.AddScoped<IAstronomyService, AstronomyService>();
+            services.AddScoped<IAtmosphereService, AtmosphereService>();
+            services.AddScoped<IConditionService, ConditionService>();
+            services.AddScoped<IWindService, WindService>();
+            services.AddScoped<IWeatherObservationService, WeatherObservationService>();
             services.AddTransient<IWeatherForecastHandler, WeatherForecastHandler>();
             services.AddTransient<IWeatherImpl, YahooWeatherApiImpl>();
             services.AddTransient<IWeatherReportHandler, WeatherReportHandler>();
