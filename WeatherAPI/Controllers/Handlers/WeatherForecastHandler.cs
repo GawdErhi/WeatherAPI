@@ -32,7 +32,7 @@ namespace WeatherAPI.Controllers.Handlers
                 IEnumerable<CityDTO> cities = _cityService.GetCitiesWithNames(cityNames.Take(_configuration.GetSection("WeatherApiConfig").GetValue<int>("MaxApiCallLimit")));
                 _weatherImpl.GetCurrentWeatherObservation(cities);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -46,7 +46,7 @@ namespace WeatherAPI.Controllers.Handlers
             try
             {
                 _weatherImpl.StopGettingCurrentWeatherObservation();
-            }catch(Exception exception)
+            }catch(Exception)
             {
                 throw;
             }

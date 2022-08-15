@@ -64,7 +64,7 @@ namespace WeatherAPI.Controllers.Handlers
                 }
                 await _cityService.SaveRecords(cityObjs);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 throw;
             }

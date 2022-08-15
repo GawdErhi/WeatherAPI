@@ -5,6 +5,7 @@ using WeatherAPI.DB;
 using WeatherAPI.Models;
 using WeatherAPI.Services.Contracts;
 using WeatherAPI.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace WeatherAPI.Services
 {
@@ -56,7 +57,7 @@ namespace WeatherAPI.Services
                 List<WeatherObservationDTO> weatherObservations = new List<WeatherObservationDTO>();
                 foreach(var cityName in cityNames)
                 {
-                    weatherObservations.AddRange(_weatherApiDBContext.WeatherObservations
+                    weatherObservations.AddRange(_weatherApiDBContext.WeatherObservations.AsNoTracking()
                         .Where(x => x.City.Name.Contains(cityName.CityName) && x.City.Country.Name.Contains(cityName.CountryName))
                         .OrderByDescending(x => x.CreatedAt)
                         .Take(1)

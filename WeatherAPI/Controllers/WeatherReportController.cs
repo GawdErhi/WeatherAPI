@@ -24,7 +24,6 @@ namespace WeatherAPI.Controllers
         {
             try
             {
-                Log4NetManager.Debug("Getting weather report right now");
                 return Content(_weatherReportHandler.GetMostRecentWeatherReport(cityNames), "application/json");
             }
             catch (Exception)
