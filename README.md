@@ -4,7 +4,7 @@
 
 2. Seed cities by calling the SeedController
 
-3. After both countries and cities have seeded successfully you can now call the FetchCurrentWeatherObservation action in the WeatherForecastController to start fetching the most recent weather observations asynchronously at a predefined interval determined by the "CallInterval" key in the appsettings.json file.
+3. After both countries and cities have seeded successfully you can now call the FetchCurrentWeatherObservation action in the WeatherForecastController to start fetching the most recent weather observations asynchronously at a predefined interval determined by the CallInterval key(this value is in seconds) in the appsettings.json file.
 
 4. To stop the asynchronous operation fetching the most recent weather observations call the StopFetchingCurrentWeatherObservation action in the same controller.
 
