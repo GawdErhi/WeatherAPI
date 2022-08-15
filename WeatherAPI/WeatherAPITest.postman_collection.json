@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "c4bd6024-fc57-4742-a783-5fd851eca5a9",
+		"name": "WeatherAPITest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SeedCountries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/Seed/SeedCountries",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Seed",
+						"SeedCountries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SeedCities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/Seed/SeedCities",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"Seed",
+						"SeedCities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchCurrentWeatherObservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"CityName\" : \"lagos\",\r\n        \"CountryName\" : \"nigeria\"\r\n    },\r\n    {\r\n        \"CityName\" : \"warri\",\r\n        \"CountryName\" : \"nigeria\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44308/WeatherForecast/FetchCurrentWeatherObservation",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"WeatherForecast",
+						"FetchCurrentWeatherObservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StopFetchingCurrentWeatherObservation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44308/WeatherForecast/StopFetchingCurrentWeatherObservation",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"WeatherForecast",
+						"StopFetchingCurrentWeatherObservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWeatherReport",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"CityName\" : \"lagos island\",\r\n        \"CountryName\" : \"nigeria\"\r\n    },\r\n    {\r\n        \"CityName\" : \"lagos\",\r\n        \"CountryName\" : \"nigeria\"\r\n    },\r\n    {\r\n        \"CityName\" : \"warri\",\r\n        \"CountryName\" : \"nigeria\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44308/WeatherReport/GetWeatherReport",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44308",
+					"path": [
+						"WeatherReport",
+						"GetWeatherReport"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
